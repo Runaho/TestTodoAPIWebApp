@@ -1,0 +1,29 @@
+﻿@page
+@model test_WebApp.Pages.Todos.UpdateModel
+@{
+    ViewData["Title"] = "Update Todo";
+}
+
+<form method="post" class="col-6">
+    <input type="hidden" asp-for="_Todo.Id" />
+
+    <div>
+        <label>Name</label>
+        <input asp-for="_Todo.Name" class="form-control" />
+        <span asp-validation-for="_Todo.Name"></span>
+    </div>
+
+    <br />
+    <br />
+
+    <div>
+        <label>Is Completed</label>
+        <input asp-for="_Todo.IsComplete" type="checkbox">
+        <span asp-validation-for="_Todo.IsComplete"></span>
+    </div>
+
+    <div style="text-align: right;">
+        <input type="submit" class="btn btn-warning" value="Update" />
+    </div>
+
+</form>

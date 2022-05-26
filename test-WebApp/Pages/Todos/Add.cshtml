@@ -1,0 +1,24 @@
+﻿@page
+@model test_WebApp.Pages.AddModel
+@{
+    ViewData["Title"] = "Add new Todo";
+}
+
+<form method="post" class="col-6">
+    <div>
+        <label>Name</label>
+        <input asp-for="NewTodo.Name" class="form-control" />
+        <span asp-validation-for="NewTodo.Name"></span>
+    </div>
+    <br />
+    <br />
+    <div>
+        <label>Is Completed</label>
+        <input asp-for="NewTodo.IsComplete" type="checkbox">
+        <span asp-validation-for="NewTodo.IsComplete"></span>
+    </div>
+
+    <div style="text-align: right;">
+        <input type="submit" class="btn btn-success" value="Add" />
+    </div>
+</form>

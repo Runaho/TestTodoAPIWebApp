@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Todo's";
+}
+
+<div>
+    @if (Model.Todos.Any())
+    {
+        <ul>
+            @foreach (var todo in Model.Todos)
+            {
+                <li>@todo.Name <a asp-page="./Todos/Update" asp-route-id="@todo.Id" ->Click for update</a> Status : @(todo.IsComplete?"Compeleted":"Not Completed")</li>
+            }
+        </ul>
+    }
+    else
+    {
+        <a asp-page="./Todos/Add">Please add some todos.</a>
+    }
+</div>
